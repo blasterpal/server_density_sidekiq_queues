@@ -3,7 +3,6 @@
 import re
 import commands
 
-SIDEKIQ_QUEUES = "redis-cli --raw smembers sidekiq:queues"
 REDIS_AVAIL = int(commands.getoutput("type redis-cli > /dev/null 2>&1 ; echo $?")) == 0
 
 class SidekiqQueue:
@@ -28,7 +27,7 @@ class SidekiqQueue:
         if REDIS_AVAIL:
             namespace = agentConfig['Sidekiq']['namespace']
             command = "redis-cli --raw llen %(namespace)s:queue:" % locals()
-            for queue in commands.getoutput(SIDEKIQ_QUEUES).splitlines():
+            for queue in commands.getoutput(command).splitlines():
                 stats[queue] = int(commands.getoutput(command+queue))
         return stats
 
