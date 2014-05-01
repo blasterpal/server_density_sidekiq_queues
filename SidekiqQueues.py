@@ -23,7 +23,7 @@ class SidekiqQueue:
 
     def run(self):
         stats = {}
-        #only run redis-cli commands on servers that have it, right now the app master
+        #only run redis-cli commands on servers that have it.
         if REDIS_AVAIL:
             namespace = agentConfig['Sidekiq']['namespace']
             command = "redis-cli --raw llen %(namespace)s:queue:" % locals()
