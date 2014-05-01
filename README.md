@@ -1,7 +1,7 @@
 SidekiqQueues
 =============================
 
-[Sidekiq](https://github.com/mperham/sidekiq) plugin for ServerDensity to show queue sizes. 
+[Sidekiq](https://github.com/mperham/sidekiq) plugin for ServerDensity to show queue sizes.
 
 #Metrics
 
@@ -9,7 +9,7 @@ The plugin will report one metric per queue in Sidekiq.
 
 ##Assumptions
 
-* Requires redis-cli in PATH.
+* Requires `redis-cli` in `$PATH`.
 * Presumes installation on the primary Redis server.
 * Only tested for Linux.
 
