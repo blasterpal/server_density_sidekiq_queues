@@ -19,4 +19,4 @@ Copy `SidekiqQueues.py` plugin to your `sd-agent` plugins folder (`/usr/bin/sd-a
 
 
 #Thanks
-Drew configuration inspiration from https://github.com/justincase/sd-beanstalkd/blob/master/Beanstalkd.py.
+Configuration inspiration from https://github.com/justincase/sd-beanstalkd/blob/master/Beanstalkd.py.
