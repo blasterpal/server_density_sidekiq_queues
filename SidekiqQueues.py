@@ -5,7 +5,7 @@ import commands
 
 REDIS_AVAIL = int(commands.getoutput("type redis-cli > /dev/null 2>&1 ; echo $?")) == 0
 
-class SidekiqQueue:
+class SidekiqQueues:
     def __init__(self, agent_config, checks_logger, raw_config):
         self.agent_config = agent_config
         self.checks_logger = checks_logger
@@ -32,6 +32,6 @@ class SidekiqQueue:
         return stats
 
 if __name__ == '__main__':
-    sidekiq = SidekiqQueue(None, None, None)
+    sidekiq = SidekiqQueues(None, None, None)
     print sidekiq.run()
 
