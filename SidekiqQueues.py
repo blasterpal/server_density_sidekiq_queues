@@ -25,7 +25,7 @@ class SidekiqQueues:
         stats = {}
         #only run redis-cli commands on servers that have it.
         if REDIS_AVAIL:
-            namespace = agent_config['Sidekiq']['namespace']
+            namespace = self.agent_config['Sidekiq']['namespace']
             command = "redis-cli --raw llen %(namespace)s:queue:" % locals()
             for queue in commands.getoutput(command).splitlines():
                 stats[queue] = int(commands.getoutput(command+queue))
